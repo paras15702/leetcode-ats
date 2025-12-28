@@ -46,12 +46,12 @@ async def fetch_leetcode_stats(username: str):
     if not user:
         return None
 
-    # Difficulty counts
+
     parsed = {"easy": 0, "medium": 0, "hard": 0}
     for item in user["submitStats"]["acSubmissionNum"]:
         parsed[item["difficulty"].lower()] = item["count"]
 
-    # Topic counts
+
     topics = {}
 
     for level in ["fundamental", "intermediate", "advanced"]:
